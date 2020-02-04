@@ -33,11 +33,11 @@ const reduce = (array, reducer, initialValue) => {
     return accumulator;
 };
 
-const slice = (array, begin, end=0) => {
+const slice = (array, begin=0, end=0) => {
     let newArray = [];
-    if ((begin < 0) || (end < 0)) {
-        array.reverse();
-    }
+    // if ((begin < 0) || (end < 0)) {
+    //     array.reverse();
+    // }
     if (end !== 0) {
         for (begin; begin < end; begin++) {
             newArray.push(array[begin]);
@@ -61,7 +61,7 @@ console.log(greaterThan4);
 console.log(square);
 const sum = reduce(array, item = (a, b) => a + b);
 console.log(sum);
-const sliceResult = slice(array, 0, 3);
+const sliceResult = slice(array, -3, 5);
 console.log(sliceResult);
 // 1. ДЗ - 1:
 //
