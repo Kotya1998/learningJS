@@ -32,6 +32,23 @@ const reduce = (array, reducer, initialValue) => {
     }
     return accumulator;
 };
+
+const slice = (array, begin, end=0) => {
+    let newArray = [];
+    if ((begin < 0) || (end < 0)) {
+        array.reverse();
+    }
+    if (end !== 0) {
+        for (begin; begin < end; begin++) {
+            newArray.push(array[begin]);
+        }
+    } else {
+        for (begin; begin < array.length; begin++)
+            newArray.push(array[begin]);
+    }
+    return newArray;
+};
+
 // const splice = (start, deleteCount) => {
 //
 // };
@@ -44,7 +61,8 @@ console.log(greaterThan4);
 console.log(square);
 const sum = reduce(array, item = (a, b) => a + b);
 console.log(sum);
-
+const sliceResult = slice(array, 0, 3);
+console.log(sliceResult);
 // 1. ДЗ - 1:
 //
 // написать модуль, который экспортирует аналоги методов для работы с массивами:
@@ -60,6 +78,3 @@ console.log(sum);
 //     Реализация функции splice является задачей со звездочкой.
 //     Ее выполнение не обязательно, но желательно.
 //
-//     Внимание:
-// в данном задании запрещено использовать встроенные методы для работы с массивами! Разрешено использовать стандартные
-// операторы 'for/for-in/while/if`' (и т.д.) и свойство 'length'
